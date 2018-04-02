@@ -17,7 +17,7 @@
         android:id="@+id/edtUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter user"
+        android:hint="enter user name"
         android:padding="15dp" />
 
 
@@ -25,7 +25,8 @@
         android:id="@+id/edtPswd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter user"
+        android:hint="enter password"
+        android:inputType="textPassword"
         android:padding="15dp" />
 
      <Button

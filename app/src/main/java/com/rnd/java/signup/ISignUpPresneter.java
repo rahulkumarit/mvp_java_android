@@ -3,6 +3,8 @@ package com.rnd.java.signup;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.rnd.java.db.SqliteHelper;
+
 public class ISignUpPresneter implements SignUpContractor.SignUpPresenter {
 
     private Context context;
@@ -22,10 +24,14 @@ public class ISignUpPresneter implements SignUpContractor.SignUpPresenter {
             signUpView.validation();
         } else if (TextUtils.isEmpty(pswd)) {
             signUpView.validation();
-         } else {
-
-
-         }
+        } else {
+            SqliteHelper sqliteHelper = new SqliteHelper(context);
+            if (sqliteHelper.insertUser(full_name, email, pswd) > 0) {
+                signUpView.success();
+            } else {
+                signUpView.errorLogin();
+            }
+        }
 
 
     }

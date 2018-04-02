@@ -1,5 +1,6 @@
 package com.rnd.java.signup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.rnd.java.R;
+import com.rnd.java.list.MovieListActivity;
 
 public class SignUpActivity extends AppCompatActivity implements SignUpContractor.SignUpView {
 
@@ -48,12 +50,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpContracto
 
     @Override
     public void errorLogin() {
-        Toast.makeText(this, "Sign Up Error", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Somthing went wrong", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void success() {
-
+        Toast.makeText(this, "Success signup", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, MovieListActivity.class));
     }
 
 
